@@ -1,6 +1,6 @@
 # react-native-ruler-picker
 
-![npm](https://img.shields.io/npm/dm/react-native-ruler-picker) [![HitCount](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Frnheroes%2Freact-native-ruler-picker.json%3Fcolor%3Dblue&show=unique)](http://hits.dwyl.com/rnheroes/react-native-ruler-picker)
+[![npm](https://img.shields.io/npm/dm/react-native-ruler-picker)](https://www.npmjs.com/package/react-native-ruler-picker) [![HitCount](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Frnheroes%2Freact-native-ruler-picker.json%3Fcolor%3Dblue&show=unique)](http://hits.dwyl.com/rnheroes/react-native-ruler-picker)
 
 ⚡ Lightning-fast and customizable Ruler Picker component for React Native
 
