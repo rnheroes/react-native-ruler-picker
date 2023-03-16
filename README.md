@@ -4,6 +4,8 @@
 
 ⚡ Lightning-fast and customizable Ruler Picker component for React Native
 
+![Preview](docs/preview.gif)
+
 ## Installation
 
 1. Ensure sure you've installed [flash-list](https://github.com/Shopify/flash-list)
