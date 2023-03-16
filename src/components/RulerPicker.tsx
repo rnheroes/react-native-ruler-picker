@@ -353,6 +353,8 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 32,
     fontWeight: '800',
+    margin: 0,
+    padding: 0,
   },
   unitText: {
     color: 'black',
