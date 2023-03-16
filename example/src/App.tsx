@@ -1,18 +1,21 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-ruler-picker';
+import { StyleSheet, View } from 'react-native';
+import { RulerPicker } from 'react-native-ruler-picker';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <RulerPicker
+        min={0}
+        max={240}
+        step={1}
+        fractionDigits={0}
+        initialValue={0}
+        onValueChange={(number) => console.log('onValueChange', number)}
+        onValueChangeEnd={(number) => console.log('onValueChangeEnd', number)}
+        unit="cm"
+      />
     </View>
   );
 }
@@ -20,8 +23,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   box: {
     width: 60,
