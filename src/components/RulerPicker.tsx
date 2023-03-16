@@ -90,6 +90,19 @@ export type RulerPickerProps = {
    */
   unitTextStyle?: RulerPickerTextProps;
   /**
+   * A floating-point number that determines how quickly the scroll view
+   * decelerates after the user lifts their finger. You may also use string
+   * shortcuts `"normal"` and `"fast"` which match the underlying iOS settings
+   * for `UIScrollViewDecelerationRateNormal` and
+   * `UIScrollViewDecelerationRateFast` respectively.
+   *
+   *  - `'normal'`: 0.998 on iOS, 0.985 on Android (the default)
+   *  - `'fast'`: 0.99 on iOS, 0.9 on Android
+   *
+   * @default 'normal'
+   */
+  decelerationRate?: 'fast' | 'normal' | number;
+  /**
    * Callback when the value changes
    *
    * @param value
@@ -122,6 +135,7 @@ export const RulerPicker = ({
   longStepColor = 'darkgray',
   valueTextStyle,
   unitTextStyle,
+  decelerationRate = 'normal',
   onValueChange,
   onValueChangeEnd,
 }: RulerPickerProps) => {
@@ -256,7 +270,7 @@ export const RulerPicker = ({
         )}
         initialScrollIndex={Math.floor((initialValue - min) / step)}
         snapToAlignment="start"
-        decelerationRate="normal"
+        decelerationRate={decelerationRate}
         estimatedFirstItemOffset={0}
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
