@@ -1,5 +1,7 @@
 # react-native-ruler-picker
 
+![npm](https://img.shields.io/npm/dm/react-native-ruler-picker) [![HitCount](https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Frnheroes%2Freact-native-ruler-picker.json%3Fcolor%3Dblue&show=unique)](http://hits.dwyl.com/rnheroes/react-native-ruler-picker)
+
 ⚡ Lightning-fast and customizable Ruler Picker component for React Native
 
 ## Installation
@@ -42,12 +44,12 @@ import { RulerPicker } from 'react-native-ruler-picker';
 | unitTextStyle    | RulerPickerTextProps    | No       | -             | Text style of the unit                   |
 | onValueChange    | (value: string) => void | No       | -             | Callback when the value changes          |
 | onValueChangeEnd | (value: string) => void | No       | -             | Callback when the value changes end      |
-| gapBetweenSteps  | number                  | Yes      | -             | Gap between steps                        |
-| shortStepHeight  | number                  | Yes      | -             | Height of the short step                 |
-| longStepHeight   | number                  | Yes      | -             | Height of the long step                  |
-| stepWidth        | number                  | Yes      | -             | Width of the steps                       |
-| shortStepColor   | string                  | Yes      | -             | Color of the short steps                 |
-| longStepColor    | string                  | Yes      | -             | Color of the long steps                  |
+| gapBetweenSteps  | number                  | No       | 10            | Gap between steps                        |
+| shortStepHeight  | number                  | No       | 20            | Height of the short step                 |
+| longStepHeight   | number                  | No       | 40            | Height of the long step                  |
+| stepWidth        | number                  | No       | 2             | Width of the steps                       |
+| shortStepColor   | string                  | No       | 'lightgray'   | Color of the short steps                 |
+| longStepColor    | string                  | No       | 'darkgray'    | Color of the long steps                  |
 
 ## Contributing
 
