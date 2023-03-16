@@ -38,7 +38,12 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "ruler",
+    "picker",
+    "react-native-ruler-picker",
+    "react-native-picker",
+    "react-native-ruler"
   ],
   "repository": "https://github.com/rnheroes/react-native-ruler-picker",
   "author": "React Native Heroes <yigithanyucedag@gmail.com> (https://github.com/rnheroes)",
