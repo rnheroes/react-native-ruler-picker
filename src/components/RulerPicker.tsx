@@ -10,7 +10,11 @@ import {
 } from 'react-native';
 import type { NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
 
-import { AnimatedFlashList, ListRenderItem } from '@shopify/flash-list';
+import {
+  AnimatedFlashList,
+  FlashList,
+  ListRenderItem,
+} from '@shopify/flash-list';
 
 import { RulerPickerItem, RulerPickerItemProps } from './RulerPickerItem';
 import { calculateCurrentValue } from '../utils/';
@@ -141,6 +145,7 @@ export const RulerPicker = ({
 }: RulerPickerProps) => {
   const itemAmount = (max - min) / step;
   const arrData = Array.from({ length: itemAmount + 1 }, (_, index) => index);
+  const listRef = useRef<FlashList<typeof arrData>>(null);
 
   const stepTextRef = useRef<TextInput>(null);
   const prevValue = useRef<string>(initialValue.toFixed(fractionDigits));
@@ -253,10 +258,19 @@ export const RulerPicker = ({
       step,
     ]
   );
+  const onContentSizeChange = useCallback(() => {
+    const initialIndex = Math.floor((initialValue - min) / step);
+    listRef.current?.scrollToOffset({
+      offset: initialIndex * (stepWidth + gapBetweenSteps),
+      animated: false,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <View style={{ width, height }}>
       <AnimatedFlashList
+        ref={listRef}
         data={arrData}
         keyExtractor={(_, index) => index.toString()}
         renderItem={renderItem}
@@ -268,7 +282,7 @@ export const RulerPicker = ({
         snapToOffsets={arrData.map(
           (_, index) => index * (stepWidth + gapBetweenSteps)
         )}
-        initialScrollIndex={Math.floor((initialValue - min) / step)}
+        onContentSizeChange={onContentSizeChange}
         snapToAlignment="start"
         decelerationRate={decelerationRate}
         estimatedFirstItemOffset={0}
