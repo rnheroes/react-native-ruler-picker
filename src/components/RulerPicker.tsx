@@ -258,14 +258,13 @@ export const RulerPicker = ({
       step,
     ]
   );
-  const onContentSizeChange = useCallback(() => {
+  function onContentSizeChange() {
     const initialIndex = Math.floor((initialValue - min) / step);
     listRef.current?.scrollToOffset({
       offset: initialIndex * (stepWidth + gapBetweenSteps),
       animated: false,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }
 
   return (
     <View style={{ width, height }}>

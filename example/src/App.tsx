@@ -8,13 +8,13 @@ export default function App() {
     <View style={styles.container}>
       <RulerPicker
         min={0}
+        unit="cm"
         max={240}
         step={1}
         fractionDigits={0}
         initialValue={0}
         onValueChange={(number) => console.log('onValueChange', number)}
         onValueChangeEnd={(number) => console.log('onValueChangeEnd', number)}
-        unit="cm"
       />
     </View>
   );
